@@ -8,13 +8,14 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { loginUser } from "../../services/apiCalls";
 
 const Login = () => {
   const navigate = useNavigate();
 
   const [message, setMessage] = useState("");
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
 
     const data = {
@@ -22,7 +23,10 @@ const Login = () => {
       password: e.target.password.value,
     };
 
-    console.log(data);
+    try {
+      await loginUser(data);
+      navigate("/dashboard");
+    } catch (err) {}
   };
 
   return (
@@ -54,6 +58,7 @@ const Login = () => {
           label="Password"
           variant="outlined"
           name="password"
+          type="password"
         />
 
         <Stack direction="row" spacing="15px" justifyContent="flex-end">

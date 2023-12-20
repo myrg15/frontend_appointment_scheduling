@@ -12,3 +12,24 @@ export const createUser = async (data) => {
     console.log(error);
   }
 };
+
+export const loginUser = async (data) => {
+  try {
+    const response = await axiosInstance.post("/users/login", data);
+    localStorage.setItem("token", response.data.token);
+    localStorage.setItem("user", response.data.name);
+    localStorage.setItem("role", response.data.role);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getAllTreatments = async () => {
+  try {
+    const response = await axiosInstance.get("/treatments/all");
+    return response.data.treatments;
+  } catch (error) {
+    console.log(error);
+  }
+};
