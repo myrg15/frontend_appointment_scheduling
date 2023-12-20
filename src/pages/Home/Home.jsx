@@ -15,7 +15,7 @@ const Home = () => {
 
   console.log(treatments);
 
-  return <div>Trataminetos</div>;
+  return <div>Treatments</div>;
 };
 
 export default Home;
