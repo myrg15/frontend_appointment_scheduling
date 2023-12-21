@@ -17,9 +17,12 @@ import Button from "@mui/material/Button";
 import { NavLink, Outlet } from "react-router-dom";
 
 const drawerWidth = 240;
-const navItems = [
+let navItems = [
   { name: "home", path: "/" },
-  { name: "Treatment", path: "/create-treatment" },
+  { name: "Create Treatment", path: "/create-treatment" },
+  { name: "Login", path: "/login", protected: false },
+  { name: "Register", path: "/register", protected: false },
+  { name: "Logout", path: "/logout" },
 ];
 
 function NavBar(props) {
@@ -29,6 +32,12 @@ function NavBar(props) {
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+
+  const TOKEN = localStorage.getItem("token");
+
+  if (TOKEN) {
+    navItems = navItems.filter((item) => item.protected !== false);
+  }
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
@@ -103,7 +112,12 @@ function NavBar(props) {
           {drawer}
         </Drawer>
       </nav>
-      <Box component="main" sx={{ p: 2, pt: "65px" }}>
+      <Box
+        width="100%"
+        height="100vh"
+        component="main"
+        sx={{ p: 2, pt: "65px" }}
+      >
         <Outlet />
       </Box>
     </Box>

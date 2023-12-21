@@ -25,7 +25,7 @@ const Login = () => {
 
     try {
       await loginUser(data);
-      navigate("/dashboard");
+      navigate("/");
     } catch (err) {}
   };
 

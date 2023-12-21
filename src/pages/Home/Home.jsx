@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { getAllTreatments } from "../../services/apiCalls";
-import { Box, Button, Card, Chip, Typography } from "@mui/material";
+import { Box, Button, Card, Chip, Tooltip, Typography } from "@mui/material";
+import { Icon } from "@iconify/react";
 
 const Home = () => {
   const TOKEN = localStorage.getItem("token");
+  const ROLE = localStorage.getItem("role");
   const [treatments, setTreatments] = useState([]);
 
   useEffect(() => {
@@ -26,6 +28,7 @@ const Home = () => {
               display="flex"
               flexDirection="column"
               justifyContent="align-items"
+              width="100%"
             >
               <Box height="150px" position="relative">
                 <Box
@@ -34,6 +37,49 @@ const Home = () => {
                   bgcolor="#00000073"
                   position="absolute"
                 >
+                  {ROLE === "admin" && (
+                    <Box
+                      p="5px"
+                      display="flex"
+                      flexDirection="column"
+                      gap="5px"
+                    >
+                      <Tooltip
+                        sx={{ cursor: "pointer" }}
+                        title="Delete"
+                        placement="right"
+                      >
+                        <Box
+                          width="30px"
+                          height="30px"
+                          borderRadius="50%"
+                          bgcolor="red"
+                          display="flex"
+                          justifyContent="center"
+                          alignItems="center"
+                        >
+                          <Icon icon="fluent:delete-24-regular" color="white" />
+                        </Box>
+                      </Tooltip>
+                      <Tooltip
+                        sx={{ cursor: "pointer" }}
+                        title="Edit"
+                        placement="right"
+                      >
+                        <Box
+                          width="30px"
+                          height="30px"
+                          borderRadius="50%"
+                          bgcolor="#388e3c"
+                          display="flex"
+                          justifyContent="center"
+                          alignItems="center"
+                        >
+                          <Icon icon="basil:edit-outline" color="white" />
+                        </Box>
+                      </Tooltip>
+                    </Box>
+                  )}
                   <Box
                     position="absolute"
                     p="1"

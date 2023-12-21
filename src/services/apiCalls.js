@@ -33,3 +33,13 @@ export const getAllTreatments = async () => {
     console.log(error);
   }
 };
+
+export const createTreatment = async (data) => {
+  try {
+    await axiosInstance.post("/treatments/create", data);
+    return true;
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
+};
