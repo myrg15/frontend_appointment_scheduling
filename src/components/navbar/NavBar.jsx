@@ -14,7 +14,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 
 const drawerWidth = 240;
 let navItems = [
@@ -22,12 +22,13 @@ let navItems = [
   { name: "Create Treatment", path: "/create-treatment" },
   { name: "Login", path: "/login", protected: false },
   { name: "Register", path: "/register", protected: false },
-  { name: "Logout", path: "/logout" },
 ];
 
 function NavBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const navigate = useNavigate();
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -38,6 +39,12 @@ function NavBar(props) {
   if (TOKEN) {
     navItems = navItems.filter((item) => item.protected !== false);
   }
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("role");
+    navigate("/login");
+  };
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
@@ -89,6 +96,12 @@ function NavBar(props) {
                 </Button>
               </NavLink>
             ))}
+
+            {TOKEN && (
+              <Button onClick={handleLogout} sx={{ color: "#fff" }}>
+                Logout
+              </Button>
+            )}
           </Box>
         </Toolbar>
       </AppBar>

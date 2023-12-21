@@ -2,11 +2,24 @@ import React, { useEffect, useState } from "react";
 import { getAllTreatments } from "../../services/apiCalls";
 import { Box, Button, Card, Chip, Tooltip, Typography } from "@mui/material";
 import { Icon } from "@iconify/react";
+import AlertDialog from "../../components/dialog/AlertDialog";
 
 const Home = () => {
   const TOKEN = localStorage.getItem("token");
   const ROLE = localStorage.getItem("role");
   const [treatments, setTreatments] = useState([]);
+  const [open, setOpen] = useState(false);
+  const [treatmentToDelete, setTreatmentToDelete] = useState(null);
+
+  const handleClickOpen = (treatmentId) => {
+    setTreatmentToDelete(treatmentId); // Guarda el ID del tratamiento que se quiere eliminar
+    setOpen(true); // Abre el diálogo
+  };
+
+  const handleClose = () => {
+    setTreatmentToDelete(null); // Limpia el tratamiento a eliminar
+    setOpen(false); // Cierra el diálogo
+  };
 
   useEffect(() => {
     const fetchTreatments = async () => {
@@ -17,10 +30,9 @@ const Home = () => {
     fetchTreatments();
   }, []);
 
-  console.log(treatments);
-
   return (
     <Box display="flex" gap="10px" p="10px">
+      <AlertDialog open={open} setOpen={setOpen} />
       {treatments.map((treatment) => {
         return (
           <Card sx={{ width: "250px", height: "300px", display: "flex" }}>
@@ -48,6 +60,7 @@ const Home = () => {
                         sx={{ cursor: "pointer" }}
                         title="Delete"
                         placement="right"
+                        onClick={() => handleClickOpen(treatment.id)}
                       >
                         <Box
                           width="30px"
