@@ -66,7 +66,7 @@ const Home = () => {
                           width="30px"
                           height="30px"
                           borderRadius="50%"
-                          bgcolor="red"
+                          bgcolor="#f6b5cffb"
                           display="flex"
                           justifyContent="center"
                           alignItems="center"
@@ -83,7 +83,7 @@ const Home = () => {
                           width="30px"
                           height="30px"
                           borderRadius="50%"
-                          bgcolor="#388e3c"
+                          bgcolor="#5ccfc1"
                           display="flex"
                           justifyContent="center"
                           alignItems="center"
@@ -101,10 +101,7 @@ const Home = () => {
                     m="10px"
                     zIndex={10}
                   >
-                    <Chip
-                      label={treatment.duration_treatment}
-                      color="primary"
-                    />
+                    {/*aqui va el chip*/}
                   </Box>
                 </Box>
                 <Box
@@ -138,8 +135,14 @@ const Home = () => {
                 >
                   {treatment.description}
                 </Typography>
-                <Button variant="contained" color="primary">
-                  Reserve
+                <Chip label={treatment.duration_treatment} color="primary" />
+                <Button
+                  variant="contained"
+                  sx={{ backgroundColor: "#5ccfc1", color: "white" }}
+                >
+                  {" "}
+                  {/*</Button></Box>=color="primary">*/}
+                  Booking
                 </Button>
               </Box>
             </Box>
