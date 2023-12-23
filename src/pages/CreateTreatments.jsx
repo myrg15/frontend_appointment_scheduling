@@ -17,7 +17,7 @@ const CreateTreatments = () => {
     });
 
     const data = {
-      name_treatment: e.target.name.value,
+      name_treatment: e.target.name_treatment.value,
       description: e.target.description.value,
       duration_treatment: e.target.duration_treatment.value,
       img_url: e.target.img_url.value,

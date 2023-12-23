@@ -43,3 +43,23 @@ export const createTreatment = async (data) => {
     return false;
   }
 };
+
+export const updateTreatment = async (id, data) => {
+  try {
+    await axiosInstance.put(`/treatments/treatment_update/${id}`, data);
+    return true;
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
+};
+
+export const deleteTreatment = async (id) => {
+  try {
+    await axiosInstance.delete(`/treatments/treatment_delete/${id}`);
+    return true;
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
+};

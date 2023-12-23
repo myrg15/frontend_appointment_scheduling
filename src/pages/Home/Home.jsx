@@ -3,17 +3,25 @@ import { getAllTreatments } from "../../services/apiCalls";
 import { Box, Button, Card, Chip, Tooltip, Typography } from "@mui/material";
 import { Icon } from "@iconify/react";
 import AlertDialog from "../../components/dialog/AlertDialog";
+import AlertDialogEdit from "../../components/dialog/AlertDialogEdit";
 
 const Home = () => {
   const TOKEN = localStorage.getItem("token");
   const ROLE = localStorage.getItem("role");
   const [treatments, setTreatments] = useState([]);
   const [open, setOpen] = useState(false);
+  const [openEdit, setOpenEdit] = useState(false);
   const [treatmentToDelete, setTreatmentToDelete] = useState(null);
+  const [treatmentToEdit, setTreatmentToEdit] = useState(null);
 
   const handleClickOpen = (treatmentId) => {
     setTreatmentToDelete(treatmentId); // Guarda el ID del tratamiento que se quiere eliminar
     setOpen(true); // Abre el diálogo
+  };
+
+  const handleClickOpenEdit = (treatment) => {
+    setTreatmentToEdit(treatment); // Guarda el ID del tratamiento que se quiere eliminar
+    setOpenEdit(true); // Abre el diálogo
   };
 
   const handleClose = () => {
@@ -28,11 +36,20 @@ const Home = () => {
     };
 
     fetchTreatments();
-  }, []);
+  }, [open, openEdit]);
 
   return (
-    <Box display="flex" gap="10px" p="10px">
-      <AlertDialog open={open} setOpen={setOpen} />
+    <Box display="flex" gap="10px" p="10px" flexWrap="wrap">
+      <AlertDialog
+        open={open}
+        setOpen={setOpen}
+        treatmentToDelete={treatmentToDelete}
+      />
+      <AlertDialogEdit
+        open={openEdit}
+        setOpen={setOpenEdit}
+        treatmentToEdit={treatmentToEdit}
+      />
       {treatments.map((treatment) => {
         return (
           <Card sx={{ width: "250px", height: "300px", display: "flex" }}>
@@ -78,6 +95,7 @@ const Home = () => {
                         sx={{ cursor: "pointer" }}
                         title="Edit"
                         placement="right"
+                        onClick={() => handleClickOpenEdit(treatment)}
                       >
                         <Box
                           width="30px"

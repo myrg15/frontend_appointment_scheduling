@@ -5,10 +5,23 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import { deleteTreatment, getAllTreatments } from "../../services/apiCalls";
 
-export default function AlertDialog({ open, setOpen }) {
+export default function AlertDialog({ open, setOpen, treatment }) {
   const handleClose = () => {
     setOpen(false);
+  };
+
+  console.log(treatment);
+
+  const deleteTreatmentAction = async () => {
+    console.log(treatmentToDelete);
+    try {
+      const response = await deleteTreatment(treatmentToDelete);
+      setOpen(false);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -19,9 +32,7 @@ export default function AlertDialog({ open, setOpen }) {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">
-          {"Use Google's location service?"}
-        </DialogTitle>
+        <DialogTitle id="alert-dialog-title">{"Delete treatment"}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
             You are sure you want to eliminate the treatment?
@@ -29,7 +40,7 @@ export default function AlertDialog({ open, setOpen }) {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Disagree</Button>
-          <Button onClick={handleClose} autoFo cus>
+          <Button onClick={deleteTreatmentAction} autoFo cus>
             Agree
           </Button>
         </DialogActions>
