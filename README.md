@@ -22,6 +22,8 @@ LOGIN
 ![Login](./src/Imag/Login.JPG)
 REGISTER
 ![Register](./src/Imag/Register.JPG)
+PROFILE
+![Profile](./src/Imag/Profile.JPG)
 
 ### CRUD TREATMENT ADMIN
 
