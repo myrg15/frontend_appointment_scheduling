@@ -18,10 +18,8 @@ I have developed a frontend web application to simulate the management of appoin
 
 HOME
 ![Home](./src/Imag/Home.JPG)
-
 LOGIN
 ![Login](./src/Imag/Login.JPG)
-
 REGISTER
 ![Register](./src/Imag/Register.JPG)
 

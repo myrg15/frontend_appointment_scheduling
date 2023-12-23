@@ -24,6 +24,14 @@ export const loginUser = async (data) => {
     console.log(error);
   }
 };
+export const getProfile = async () => {
+  try {
+    const response = await axiosInstance.get("/users/profile");
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 export const getAllTreatments = async () => {
   try {
