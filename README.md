@@ -14,46 +14,33 @@
 
 I have developed a frontend web application to simulate the management of appointments in a beauty center, using the tools of React vite, mui core, mysql wokbench, postman to generate different managements. New users must register and log in, then they will be able to see the different treatments to schedule an appointment, view their profile. Users with the admin role will be able to see all treatments, create, update and delete them.
 
-### Wiews
+### Views
 
 HOME
 ![Home](./src/Imag/Home.JPG)
 
 LOGIN
-![Login](./src/assets/imag/login.JPG)
-
-![Login_with_date](./src/assets/imag/loginWithdate.JPG)
+![Login](./src/Imag/Login.JPG)
 
 REGISTER
-![Register](./src/assets/imag/register.JPG)
+![Register](./src/Imag/Register.JPG)
 
-![Register_with_date](./src/assets/imag/registerwithDate.JPG)
+### CRUD TREATMENT ADMIN
 
-SCHEDULE APPOINTMENT
-![Schedule](./src/assets/imag/Schedule_Appointment.JPG)
+CREATE TREATMENT
+![Create Treatment](./src/Imag/create_Treatment.JPG)
 
-SUCCESSFULLY CREATED APPOINTMENT
-![Successfully](./src/assets/imag/Successfully_Created_Appointment.JPG)
+DELETE TREATMENT
+![Delete](./src/Imag/delete_Treatment.JPG)
 
-SUCCESSFULLY UPDATED APPOINTMENT
-![Successfully](./src/assets/imag/edit_Appointment.JPG)
-
-PROFILE
-![Profile](./src/assets/imag/Profile.JPG)
-
-VIEW APPOINTMENT
-![ViewAppointment](./src/assets/imag/View_Appointment.JPG)
-
-VIEW HEADER SUPER ADMIN
-![Header_View_All_Users_Appointment_Super_Admin](./src/assets/imag/Header_View_All_Users_Appointment.JPG)
-
-VIEW ALL APPOINTMENT SUPER ADMIN
-![View_All_Appointment_Super_Admin](./src/assets/imag/View_All_Appointment_Super_Admin.JPG)
+EDIT TREATMENT
+![Edit](./src/Imag/edit_Treatment.JPG)
 
 ### Technologies Used
 
-![Vite](./src/assets/imag/vite.png)
-![React_Mui](./src/assets/imag/react_muiMaterial.png)
+![Vite](./src/Imag/react_Vite_Type.png)
+![Material_UI](./src/Imag/Material_UI.png)
+![Workbench](./src/Imag/img_mysql_workbench.png)
 
 ### Grateful
 
