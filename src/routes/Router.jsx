@@ -7,6 +7,8 @@ import Register from "../pages/auth/Register";
 //import Dashboard from "../pages/Home/Dashboard";
 import NavBar from "../components/navbar/NavBar";
 import CreateTreatments from "../pages/CreateTreatments";
+//import { CreateAppointment } from "../services/apiCalls";
+import { CreateAppointment } from "../pages/Appointment/CreateAppointment";
 
 const Router = () => {
   return (
@@ -18,6 +20,7 @@ const Router = () => {
         <Route element={<NavBar />}>
           <Route path="/" element={<Home />} />
           <Route path="/create-treatment" element={<CreateTreatments />} />
+          <Route path="/appointment_create" element={<CreateAppointment />} />
         </Route>
       </Routes>
     </BrowserRouter>
