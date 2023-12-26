@@ -1,13 +1,20 @@
-import axios from "axios";
+import axiosInstance from "./axiosInstance";
+//import axios from "axios";
 
 const axiosInstance = axios.create({
   baseURL: "http://localhost:4001",
 });
 
 export const createUser = async (data) => {
+  const token = localStorage.getItem("token");
+  console.log(token);
   try {
-    await axiosInstance.post("/users/register", data);
-    return true;
+    const response = await axiosInstance.post("/users/register", data, {
+      Headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    console.log(response.data);
   } catch (error) {
     console.log(error);
   }
@@ -43,28 +50,44 @@ export const getAllTreatments = async () => {
 };
 
 export const createTreatment = async (data) => {
+  const token = localStorage.getItem("token");
+  console.log(token);
   try {
-    await axiosInstance.post("/treatments/create", data);
-    return true;
+    const response = await axiosInstance.post("/treatments/create", data, {
+      Headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    console.log(response.data);
   } catch (error) {
     console.log(error);
-    return false;
   }
 };
 
 export const updateTreatment = async (id, data) => {
+  const token = localStorage.getItem("token");
+  console.log(token);
   try {
-    await axiosInstance.put(`/treatments/treatment_update/${id}`, data);
-    return true;
+    const response = await axiosInstance.put(
+      `/treatments/treatment_update/${id}`,
+      data,
+      {
+        Headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    console.log(response.data);
   } catch (error) {
     console.log(error);
-    return false;
   }
 };
 
 export const deleteTreatment = async (id) => {
   try {
-    await axiosInstance.delete(`/treatments/treatment_delete/${id}`);
+    const response = await axiosInstance.delete(
+      `/treatments/treatment_delete/${id}`
+    );
     return true;
   } catch (error) {
     console.log(error);
@@ -81,3 +104,5 @@ export const createAppointment = async (data) => {
     return false;
   }
 };
+
+export default axiosInstance;
