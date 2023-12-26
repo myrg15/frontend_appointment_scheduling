@@ -9,6 +9,7 @@ import NavBar from "../components/navbar/NavBar";
 import CreateTreatments from "../pages/CreateTreatments";
 //import { CreateAppointment } from "../services/apiCalls";
 import { CreateAppointment } from "../pages/Appointment/CreateAppointment";
+import Appointments from "../pages/Appointment/Appointments";
 
 const Router = () => {
   return (
@@ -20,7 +21,7 @@ const Router = () => {
         <Route element={<NavBar />}>
           <Route path="/" element={<Home />} />
           <Route path="/create-treatment" element={<CreateTreatments />} />
-          <Route path="/appointment_create" element={<CreateAppointment />} />
+          <Route path="/appointments" element={<Appointments />} />
         </Route>
       </Routes>
     </BrowserRouter>

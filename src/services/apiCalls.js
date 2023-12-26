@@ -1,5 +1,4 @@
-import axiosInstance from "./axiosInstance";
-//import axios from "axios";
+import axios from "axios";
 
 const axiosInstance = axios.create({
   baseURL: "http://localhost:4001",
@@ -105,4 +104,11 @@ export const createAppointment = async (data) => {
   }
 };
 
-export default axiosInstance;
+export const getAllAppointments = async () => {
+  try {
+    const response = await axiosInstance.get("/appointments/allAppointments");
+    return response.data.appointments;
+  } catch (error) {
+    console.log(error);
+  }
+};

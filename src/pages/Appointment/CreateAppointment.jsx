@@ -17,7 +17,7 @@ export const CreateAppointment = ({
   open,
   setOpen,
   dataEdit,
-  //isEdit = false,
+  isEdit = false,
 }) => {
   const navigate = useNavigate();
   const [selectDate, setSelectDate] = useState(new Date());
@@ -25,17 +25,20 @@ export const CreateAppointment = ({
   const [selectUser, setSelectUser] = useState(dataEdit?.user);
   const [selectTreatment, setSelectTreatment] = useState([]);
   const [status, setStatus] = useState("");
-  //const [message, setMessage] = useState("");
-  // const [isCreateApointment, setIsCreateAppointment] = useState(true);
+  const [message, setMessage] = useState("");
+  const [isCreateApointment, setIsCreateAppointment] = useState(true);
 
   useEffect(() => {
-    setSelectDate(new Date(dataEdit?.date)?.toISOString()?.split("T")?.[0]);
-    setSelectHour(dataEdit?.time);
-    setSelectUser(dataEdit?.user);
-    setSelectTreatment(dataEdit?.treatment);
-    setStatus(dataEdit?.status);
+    if (isEdit && dataEdit?.date) {
+      setSelectDate(new Date(dataEdit?.date)?.toISOString()?.split("T")?.[0]);
+      setSelectHour(dataEdit?.time);
+      setSelectUser(dataEdit?.user);
+      setSelectTreatment(dataEdit?.treatment);
+      setStatus(dataEdit?.status);
+    }
   }, [dataEdit]);
-  console.log("dataEdit", dataEdit);
+
+  //console.log("dataEdit", dataEdit);
 
   const handleCreateAppointment = async () => {
     const data = {
@@ -49,7 +52,7 @@ export const CreateAppointment = ({
       await createAppointment(data);
       setMessage("Appointment created successfully");
       setIsCreateAppointment(true);
-      navigate("/appointment_create");
+      navigate("/login");
     } catch (error) {
       console.error("Error creating appointment:", error);
       setMessage("Error creating appointment");

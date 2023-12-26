@@ -20,6 +20,7 @@ const drawerWidth = 240;
 let navItems = [
   { name: "home", path: "/" },
   { name: "Create Treatment", path: "/create-treatment" },
+  { name: "Appointments", path: "/appointments" },
   { name: "Login", path: "/login", protected: false },
   { name: "Register", path: "/register", protected: false },
 ];
