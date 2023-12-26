@@ -35,6 +35,7 @@ export const CreateAppointment = ({
     setSelectTreatment(dataEdit?.treatment);
     setStatus(dataEdit?.status);
   }, [dataEdit]);
+  console.log("dataEdit", dataEdit);
 
   const handleCreateAppointment = async () => {
     const data = {
