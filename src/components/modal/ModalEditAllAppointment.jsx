@@ -19,7 +19,11 @@ const style = {
   p: 3,
 };
 
-export default function ModalEditApp({ openModal, setOpenModal, idTreatment }) {
+export default function ModalEditAllAppointment({
+  openModal,
+  setOpenModal,
+  idTreatment,
+}) {
   const handleClose = () => setOpenModal(false);
 
   const [date, setDate] = React.useState(new Date());
