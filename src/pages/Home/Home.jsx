@@ -174,8 +174,8 @@ const Home = () => {
                   sx={{
                     backgroundColor: "black",
                     color: "goldenrod",
-                    height: "-5px",
-                    padding: "50px",
+                    height: "4px",
+                    padding: "30px",
                     right: "-200px",
                     margin: "-50px",
                     width: "50px",
