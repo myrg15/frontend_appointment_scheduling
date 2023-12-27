@@ -66,7 +66,7 @@ const Home = () => {
       />
       {treatments.map((treatment) => {
         return (
-          <Card sx={{ width: "250px", height: "320px", display: "flex" }}>
+          <Card sx={{ width: "250px", height: "350px", display: "flex" }}>
             <Box
               display="flex"
               flexDirection="column"
@@ -124,6 +124,47 @@ const Home = () => {
                   Duration : {treatment.duration_treatment}
                 </Typography>
 
+                {ROLE === "admin" && (
+                  <Box p="4px" display="flex" flexDirection="column" gap="5px">
+                    <Tooltip
+                      sx={{ cursor: "pointer" }}
+                      title="Delete"
+                      placement="right"
+                      onClick={() => handleClickOpen(treatment.id)}
+                    >
+                      <Box
+                        width="30px"
+                        height="30px"
+                        border="50%"
+                        bgcolor="black"
+                        display="flex"
+                        justifyContent="center"
+                        alignItems="center"
+                      >
+                        <Icon icon="fluent:delete-24-regular" color="red" />
+                      </Box>
+                    </Tooltip>
+                    <Tooltip
+                      sx={{ cursor: "pointer" }}
+                      title="Edit"
+                      placement="left"
+                      onClick={() => handleClickOpenEdit(treatment)}
+                    >
+                      <Box
+                        width="30px"
+                        height="30px"
+                        border="50%"
+                        bgcolor="black"
+                        display="flex"
+                        justifyContent="center"
+                        alignItems="center"
+                      >
+                        <Icon icon="basil:edit-outline" color="goldenrod" />
+                      </Box>
+                    </Tooltip>
+                  </Box>
+                )}
+
                 <Button
                   variant="contained"
                   onClick={() => {
@@ -131,54 +172,17 @@ const Home = () => {
                     setOpenModal(true);
                   }}
                   sx={{
-                    backgroundColor: "#5ccfc1",
-                    color: "white",
-                    padding: "5px",
-                    margin: "2px",
+                    backgroundColor: "black",
+                    color: "goldenrod",
+                    height: "-5px",
+                    padding: "50px",
+                    right: "-200px",
+                    margin: "-50px",
+                    width: "50px",
                   }}
                 >
                   Booking
                 </Button>
-                {ROLE === "admin" && (
-                  <Box p="5px" display="flex" flexDirection="row" gap="5px">
-                    <Tooltip
-                      sx={{ cursor: "pointer" }}
-                      title="Delete"
-                      placement="left"
-                      onClick={() => handleClickOpen(treatment.id)}
-                    >
-                      <Box
-                        width="30px"
-                        height="30px"
-                        borderRadius="50%"
-                        bgcolor="#f6b5cffb"
-                        display="flex"
-                        justifyContent="center"
-                        alignItems="center"
-                      >
-                        <Icon icon="fluent:delete-24-regular" color="white" />
-                      </Box>
-                    </Tooltip>
-                    <Tooltip
-                      sx={{ cursor: "pointer" }}
-                      title="Edit"
-                      placement="right"
-                      onClick={() => handleClickOpenEdit(treatment)}
-                    >
-                      <Box
-                        width="30px"
-                        height="30px"
-                        borderRadius="50%"
-                        bgcolor="#5ccfc1"
-                        display="flex"
-                        justifyContent="center"
-                        alignItems="center"
-                      >
-                        <Icon icon="basil:edit-outline" color="white" />
-                      </Box>
-                    </Tooltip>
-                  </Box>
-                )}
               </Box>
             </Box>
           </Card>
