@@ -80,51 +80,6 @@ const Home = () => {
                   bgcolor="#00000073"
                   position="absolute"
                 >
-                  {ROLE === "admin" && (
-                    <Box
-                      p="5px"
-                      display="flex"
-                      flexDirection="column"
-                      gap="5px"
-                    >
-                      <Tooltip
-                        sx={{ cursor: "pointer" }}
-                        title="Delete"
-                        placement="right"
-                        onClick={() => handleClickOpen(treatment.id)}
-                      >
-                        <Box
-                          width="30px"
-                          height="30px"
-                          borderRadius="50%"
-                          bgcolor="#f6b5cffb"
-                          display="flex"
-                          justifyContent="center"
-                          alignItems="center"
-                        >
-                          <Icon icon="fluent:delete-24-regular" color="white" />
-                        </Box>
-                      </Tooltip>
-                      <Tooltip
-                        sx={{ cursor: "pointer" }}
-                        title="Edit"
-                        placement="right"
-                        onClick={() => handleClickOpenEdit(treatment)}
-                      >
-                        <Box
-                          width="30px"
-                          height="30px"
-                          borderRadius="50%"
-                          bgcolor="#5ccfc1"
-                          display="flex"
-                          justifyContent="center"
-                          alignItems="center"
-                        >
-                          <Icon icon="basil:edit-outline" color="white" />
-                        </Box>
-                      </Tooltip>
-                    </Box>
-                  )}
                   <Box
                     position="absolute"
                     p="1"
@@ -132,9 +87,7 @@ const Home = () => {
                     bottom="0"
                     m="10px"
                     zIndex={10}
-                  >
-                    {/*aqui va el chip*/}
-                  </Box>
+                  ></Box>
                 </Box>
                 <Box
                   component="img"
@@ -186,6 +139,46 @@ const Home = () => {
                 >
                   Booking
                 </Button>
+                {ROLE === "admin" && (
+                  <Box p="5px" display="flex" flexDirection="row" gap="5px">
+                    <Tooltip
+                      sx={{ cursor: "pointer" }}
+                      title="Delete"
+                      placement="left"
+                      onClick={() => handleClickOpen(treatment.id)}
+                    >
+                      <Box
+                        width="30px"
+                        height="30px"
+                        borderRadius="50%"
+                        bgcolor="#f6b5cffb"
+                        display="flex"
+                        justifyContent="center"
+                        alignItems="center"
+                      >
+                        <Icon icon="fluent:delete-24-regular" color="white" />
+                      </Box>
+                    </Tooltip>
+                    <Tooltip
+                      sx={{ cursor: "pointer" }}
+                      title="Edit"
+                      placement="right"
+                      onClick={() => handleClickOpenEdit(treatment)}
+                    >
+                      <Box
+                        width="30px"
+                        height="30px"
+                        borderRadius="50%"
+                        bgcolor="#5ccfc1"
+                        display="flex"
+                        justifyContent="center"
+                        alignItems="center"
+                      >
+                        <Icon icon="basil:edit-outline" color="white" />
+                      </Box>
+                    </Tooltip>
+                  </Box>
+                )}
               </Box>
             </Box>
           </Card>
