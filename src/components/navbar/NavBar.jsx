@@ -48,11 +48,14 @@ function NavBar(props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{ textAlign: "center", backgroundColor: "black", color: "goldenrod" }}
+    >
+      <Typography variant="h6" sx={{ my: 2, color: "goldenrod" }}>
         Facial & Body Care
       </Typography>
-      <Divider />
+      <Divider sx={{ backgroundColor: "goldenrod" }} />
       <List>
         {navItems.map((item) => (
           <ListItem key={item.name} disablePadding>
@@ -71,7 +74,7 @@ function NavBar(props) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar component="nav" sx={{ backgroundColor: "black" }}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -85,21 +88,28 @@ function NavBar(props) {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", sm: "block", color: "goldenrod" },
+            }}
           >
             Facial & Body Care
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <NavLink to={item.path} key={item.name} sx={{ color: "#fff" }}>
-                <Button key={item.name} sx={{ color: "#fff" }}>
+              <NavLink
+                to={item.path}
+                key={item.name}
+                sx={{ color: "goldenrod" }}
+              >
+                <Button key={item.name} sx={{ color: "goldenrod" }}>
                   {item.name}
                 </Button>
               </NavLink>
             ))}
 
             {TOKEN && (
-              <Button onClick={handleLogout} sx={{ color: "#fff" }}>
+              <Button onClick={handleLogout} sx={{ color: "goldenrod" }}>
                 Logout
               </Button>
             )}
@@ -120,6 +130,8 @@ function NavBar(props) {
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
+              backgroundColor: "black",
+              color: "goldenrod",
             },
           }}
         >
@@ -130,7 +142,7 @@ function NavBar(props) {
         width="100%"
         height="100vh"
         component="main"
-        sx={{ p: 2, pt: "65px" }}
+        sx={{ p: 2, pt: "65px", backgroundColor: "whitesmoke" }}
       >
         <Outlet />
       </Box>

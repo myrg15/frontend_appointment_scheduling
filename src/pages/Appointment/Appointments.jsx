@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { getAllAppointments } from "../../services/apiCalls";
 import { Box, Card, Typography } from "@mui/material";
-import ModalEditApp from "../../components/modal/ModalEditApp";
-
+//import ModalEdiAlltAppointment from "../../components/modal/ModalEditAllAppointment";
+//he insertado modalEditAllAppointment en el import de arriba falta ajustar los cambios
 const Appointments = () => {
   const [appointments, setAppointments] = useState([]);
 
@@ -18,7 +18,7 @@ const Appointments = () => {
 
   return (
     <Box display="flex" gap="15px" p="10px">
-      <ModalEditApp />
+      <ModalEditAllAppointment />
       {appointments?.map((appointment) => (
         <Card
           key={appointment.id}
