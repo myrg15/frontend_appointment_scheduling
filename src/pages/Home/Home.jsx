@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { getAllTreatments } from "../../services/apiCalls";
-import { Box, Button, Card, Chip, Tooltip, Typography } from "@mui/material";
+import { Box, Button, Card, Tooltip, Typography } from "@mui/material";
 import { Icon } from "@iconify/react";
 import AlertDialog from "../../components/dialog/AlertDialog";
 import AlertDialogEdit from "../../components/dialog/AlertDialogEdit";
+import ModalBasic from "../../components/modal/ModalBasic";
 
 const Home = () => {
   const TOKEN = localStorage.getItem("token");
   const ROLE = localStorage.getItem("role");
   const [treatments, setTreatments] = useState([]);
+  const [idTreatment, setIdTreatment] = useState(null);
   const [open, setOpen] = useState(false);
   const [openEdit, setOpenEdit] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
   const [treatmentToDelete, setTreatmentToDelete] = useState(null);
   const [treatmentToEdit, setTreatmentToEdit] = useState(null);
 
@@ -39,7 +42,13 @@ const Home = () => {
   }, [open, openEdit]);
 
   return (
-    <Box display="flex" gap="10px" p="10px" flexWrap="wrap">
+    <Box
+      display="flex"
+      justifyContent="center"
+      gap="20px"
+      p="10px"
+      flexWrap="wrap"
+    >
       <AlertDialog
         open={open}
         setOpen={setOpen}
@@ -50,9 +59,14 @@ const Home = () => {
         setOpen={setOpenEdit}
         treatmentToEdit={treatmentToEdit}
       />
+      <ModalBasic
+        openModal={openModal}
+        setOpenModal={setOpenModal}
+        idTreatment={idTreatment}
+      />
       {treatments.map((treatment) => {
         return (
-          <Card sx={{ width: "250px", height: "300px", display: "flex" }}>
+          <Card sx={{ width: "250px", height: "320px", display: "flex" }}>
             <Box
               display="flex"
               flexDirection="column"
@@ -153,13 +167,23 @@ const Home = () => {
                 >
                   {treatment.description}
                 </Typography>
-                <Chip label={treatment.duration_treatment} color="primary" />
+                <Typography variant="body2" fontSize="13px" fontWeight={550}>
+                  Duration : {treatment.duration_treatment}
+                </Typography>
+
                 <Button
                   variant="contained"
-                  sx={{ backgroundColor: "#5ccfc1", color: "white" }}
+                  onClick={() => {
+                    setIdTreatment(treatment.id);
+                    setOpenModal(true);
+                  }}
+                  sx={{
+                    backgroundColor: "#5ccfc1",
+                    color: "white",
+                    padding: "5px",
+                    margin: "2px",
+                  }}
                 >
-                  {" "}
-                  {/*</Button></Box>=color="primary">*/}
                   Booking
                 </Button>
               </Box>

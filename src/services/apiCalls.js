@@ -96,7 +96,7 @@ export const deleteTreatment = async (id) => {
 
 export const createAppointment = async (data) => {
   try {
-    await axiosInstance.post("/appointments/appointment_create", data);
+    await axiosInstance.post("/Appointments/Appointment_create", data);
     return true;
   } catch (error) {
     console.log(error);
