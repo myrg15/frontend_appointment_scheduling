@@ -65,7 +65,7 @@ export const createTreatment = async (data) => {
 
 export const updateTreatment = async (id, data) => {
   const token = localStorage.getItem("token");
-  console.log(token);
+
   try {
     const response = await axiosInstance.put(
       `/treatments/treatment_update/${id}`,
@@ -95,8 +95,15 @@ export const deleteTreatment = async (id) => {
 };
 
 export const createAppointment = async (data) => {
+  const token = localStorage.getItem("token");
+
+  console.log(token);
   try {
-    await axiosInstance.post("/Appointments/Appointment_create", data);
+    await axiosInstance.post("/appointments/appointment_create", data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
     return true;
   } catch (error) {
     console.log(error);

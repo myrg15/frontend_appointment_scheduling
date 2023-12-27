@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getAllAppointments } from "../../services/apiCalls";
 import { Box, Card, Typography } from "@mui/material";
+import ModalEditApp from "../../components/modal/ModalEditApp";
 
 const Appointments = () => {
   const [appointments, setAppointments] = useState([]);
@@ -16,7 +17,8 @@ const Appointments = () => {
   console.log("appointments", appointments);
 
   return (
-    <Box>
+    <Box display="flex" gap="15px" p="10px">
+      <ModalEditApp />
       {appointments?.map((appointment) => (
         <Card
           key={appointment.id}
