@@ -5,7 +5,6 @@ import {
   FormControl,
   InputLabel,
   Select,
-  MenuItem,
   Typography,
 } from "@mui/material";
 import React, { useState, useEffect } from "react";
