@@ -16,7 +16,6 @@ export default function AlertDialog({ open, setOpen, treatment }) {
 
   const deleteTreatmentAction = async () => {
     console.log(treatmentToDelete);
-    //he pasado como parametro treatmentToDelete
     try {
       const response = await deleteTreatment(treatmentToDelete); //await espera a que la funcion deleteTreatment que esta en axion de apicall se conecte al backend
       setOpen(false);

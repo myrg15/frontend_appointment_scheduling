@@ -18,7 +18,6 @@ const Appointments = () => {
 
   return (
     <Box display="flex" gap="15px" p="10px">
-      <ModalEditAllAppointment />
       {appointments?.map((appointment) => (
         <Card
           key={appointment.id}
