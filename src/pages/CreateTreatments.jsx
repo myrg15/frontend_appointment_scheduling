@@ -64,26 +64,74 @@ const CreateTreatments = () => {
           name="name_treatment"
           label="Name"
           variant="outlined"
+          sx={{
+            backgroundColor: "white",
+            color: "goldenrod",
+            "&:hover": {
+              backgroundColor: "white",
+              color: "black",
+              color: "goldenrod",
+            },
+          }}
         />
         <TextField
           id="outlined-basic"
           name="description"
           label="Description"
           variant="outlined"
+          sx={{
+            backgroundColor: "white",
+            color: "goldenrod",
+            "&:hover": {
+              backgroundColor: "white",
+              color: "black",
+              color: "goldenrod",
+            },
+          }}
         />
         <TextField
           id="outlined-basic"
           name="duration_treatment"
           label="Duration"
           variant="outlined"
+          sx={{
+            backgroundColor: "white",
+            color: "goldenrod",
+            "&:hover": {
+              backgroundColor: "white",
+              color: "black",
+              color: "goldenrod",
+            },
+          }}
         />
         <TextField
           id="outlined-basic"
           name="img_url"
           label="Image URL"
           variant="outlined"
+          sx={{
+            backgroundColor: "white",
+            color: "goldenrod",
+            "&:hover": {
+              backgroundColor: "white",
+              color: "black",
+              color: "goldenrod",
+            },
+          }}
         />
-        <Button type="submit" variant="contained" disabled={isLoading}>
+        <Button
+          type="submit"
+          variant="contained"
+          disabled={isLoading}
+          sx={{
+            backgroundColor: "black",
+            color: "goldenrod",
+            "&:hover": {
+              backgroundColor: "black",
+              color: "black",
+            },
+          }}
+        >
           {isLoading ? "Cargando..." : "Create Treatment"}
         </Button>
       </Box>
