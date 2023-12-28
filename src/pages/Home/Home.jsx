@@ -17,8 +17,9 @@ const Home = () => {
   const [treatmentToDelete, setTreatmentToDelete] = useState(null);
   const [treatmentToEdit, setTreatmentToEdit] = useState(null);
 
-  const handleClickOpen = (treatmentId) => {
-    setTreatmentToDelete(treatmentId); // Guarda el ID del tratamiento que se quiere eliminar
+  const handleClickOpen = (treatmentToDelete) => {
+    //COMO PARAMETRO ESTA treatmentId, pero al parecer no funciona hago prueba nuevamente
+    setTreatmentToDelete(treatmentToDelete); // Guarda el ID del tratamiento que se quiere eliminar
     setOpen(true); // Abre el diálogo
   };
 
@@ -175,7 +176,7 @@ const Home = () => {
                     backgroundColor: "black",
                     color: "goldenrod",
                     height: "4px",
-                    padding: "30px",
+                    padding: "0px",
                     right: "-200px",
                     margin: "-50px",
                     width: "50px",

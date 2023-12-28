@@ -16,8 +16,9 @@ export default function AlertDialog({ open, setOpen, treatment }) {
 
   const deleteTreatmentAction = async () => {
     console.log(treatmentToDelete);
+    //he pasado como parametro treatmentToDelete
     try {
-      const response = await deleteTreatment(treatmentToDelete);
+      const response = await deleteTreatment(treatmentToDelete); //await espera a que la funcion deleteTreatment que esta en axion de apicall se conecte al backend
       setOpen(false);
     } catch (err) {
       console.log(err);
@@ -39,7 +40,7 @@ export default function AlertDialog({ open, setOpen, treatment }) {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Disagree</Button>
+          <Button onClick={handleClose}>Exit</Button>
           <Button onClick={deleteTreatmentAction} autoFo cus>
             Agree
           </Button>

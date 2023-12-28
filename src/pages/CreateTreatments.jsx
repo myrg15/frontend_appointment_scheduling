@@ -17,7 +17,6 @@ const CreateTreatments = () => {
       }, 500);
     });
 
-    //creo el tratamiento sin una reseña asociada
     const data = {
       //review_Id: e.target.review_Id.value,
       name_treatment: e.target.name_treatment.value,
@@ -37,37 +36,6 @@ const CreateTreatments = () => {
     } catch (error) {
       setIsLoading(false);
     }
-
-    /*const treatmentId = response.treatment.id;
-      const reviewData = {
-        user_Id: e.target.user_Id.value,
-        rating: e.target.rating.value,
-        feedback: e.target.feedback.value,
-        status: e.target.status.value,
-      };
-      await createReview({ ...reviewData, treatment_Ids: [treatmentId] });
-    } catch (error) {
-      setIsLoading(false);
-    }
-  };*/
-
-    /*const response = await createTreatment(data);
-    const treatmentId = response.id;
-
-    const reviewData = {
-      user_Id: e.target.user_Id.value,
-      rating: e.target.rating.value,      
-      feedback: e.target.feedback.value,
-      status: e.target.status.value,
-
-      await createReview({...reviewData, treatmentIds:[treatmentId]});*/
-
-    /*try {
-      const response = await createTreatment(data);
-      setIsLoading(false);
-    } catch (error) {
-      setIsLoading(false);
-    }*/
   };
 
   return (
@@ -115,24 +83,6 @@ const CreateTreatments = () => {
           label="Image URL"
           variant="outlined"
         />
-        {/* <TextField
-          id="outlined-basic"
-          name="user_Id"
-          label="User ID for Review"
-          variant="outlined"
-        />
-        <TextField
-          id="outlined-basic"
-          name="rating"
-          label="Rating for Review"
-          variant="outlined"
-        />
-        <TextField
-          id="outlined-basic"
-          name="feedback"
-          label="Feedback for Review"
-          variant="outlined"
-  />*/}
         <Button type="submit" variant="contained" disabled={isLoading}>
           {isLoading ? "Cargando..." : "Create Treatment"}
         </Button>
