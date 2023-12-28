@@ -66,7 +66,14 @@ const Home = () => {
       />
       {treatments.map((treatment) => {
         return (
-          <Card sx={{ width: "250px", height: "350px", display: "flex" }}>
+          <Card
+            sx={{
+              width: "250px",
+              height: "350px",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
             <Box
               display="flex"
               flexDirection="column"
