@@ -70,7 +70,7 @@ const Home = () => {
             key={treatment.id}
             sx={{
               width: "250px",
-              height: "350px",
+              height: "300px",
               display: "flex",
               flexDirection: "column",
               position: "relative",
@@ -81,6 +81,7 @@ const Home = () => {
               flexDirection="column"
               justifyContent="align-items"
               width="100%"
+              height="100%"
             >
               <Box height="150px" position="relative">
                 <Box
@@ -123,9 +124,8 @@ const Home = () => {
                     "-webkit-line-clamp": 3,
                     "-webkit-box-orient": "vertical",
                   }}
+                  height="auto"
                   variant="body2"
-                  height="60px"
-                  overflow="hidden"
                   textOverflow="ellipsis"
                 >
                   {treatment.description}
@@ -134,79 +134,81 @@ const Home = () => {
                   Duration : {treatment.duration_treatment}
                 </Typography>
 
-                {ROLE === "admin" && (
-                  <Box
-                    position="absolute"
-                    bottom="0"
-                    right="0"
-                    m="10px"
-                    display="flex"
-                    flexDirection="column"
-                    gap="5px"
-                  >
-                    <Tooltip
-                      sx={{ cursor: "pointer" }}
-                      title="Delete"
-                      placement="right"
-                      onClick={() => handleClickOpen(treatment.id)}
-                    >
-                      <Box
-                        width="30px"
-                        height="30px"
-                        border="50%"
-                        bgcolor="black"
-                        display="flex"
-                        justifyContent="center"
-                        alignItems="center"
-                      >
-                        <Icon
-                          icon="fluent:delete-24-regular"
-                          color="goldenrod"
-                        />
-                      </Box>
-                    </Tooltip>
-                    <Tooltip
-                      sx={{ cursor: "pointer" }}
-                      title="Edit"
-                      placement="right"
-                      onClick={() => handleClickOpenEdit(treatment)}
-                    >
-                      <Box
-                        width="30px"
-                        height="30px"
-                        border="50%"
-                        bgcolor="black"
-                        display="flex"
-                        justifyContent="center"
-                        alignItems="center"
-                      >
-                        <Icon icon="basil:edit-outline" color="goldenrod" />
-                      </Box>
-                    </Tooltip>
-                  </Box>
-                )}
-
-                <Button
-                  variant="contained"
-                  onClick={() => {
-                    setIdTreatment(treatment.id);
-                    setOpenModal(true);
-                  }}
-                  sx={{
-                    backgroundColor: "black",
-                    color: "goldenrod",
-                    //height: "4px",
-                    //justifyContent: "flex-around",
-                    position: "absolute",
-                    //padding: "0px",
-                    bottom: "10px",
-                    right: "10px",
-                    //margin: "-50px",
-                    //width: "80px",
-                  }}
+                <Box
+                  display="flex"
+                  height="100%"
+                  alignItems="center"
+                  justifyContent="space-between"
+                  p="0 5px"
                 >
-                  Booking
-                </Button>
+                  <Box display="flex" gap="10px">
+                    {ROLE === "admin" && (
+                      <Box display="flex" flexDirection="column" gap="5px">
+                        <Tooltip
+                          sx={{ cursor: "pointer" }}
+                          title="Edit"
+                          placement="right"
+                          onClick={() => handleClickOpenEdit(treatment)}
+                        >
+                          <Box
+                            width="30px"
+                            height="30px"
+                            border="50%"
+                            bgcolor="black"
+                            display="flex"
+                            justifyContent="center"
+                            alignItems="center"
+                          >
+                            <Icon icon="basil:edit-outline" color="goldenrod" />
+                          </Box>
+                        </Tooltip>
+                      </Box>
+                    )}
+                    {ROLE === "admin" && (
+                      <Tooltip
+                        sx={{ cursor: "pointer" }}
+                        title="Delete"
+                        placement="right"
+                        onClick={() => handleClickOpen(treatment.id)}
+                      >
+                        <Box
+                          width="30px"
+                          height="30px"
+                          border="50%"
+                          bgcolor="black"
+                          display="flex"
+                          justifyContent="center"
+                          alignItems="center"
+                        >
+                          <Icon
+                            icon="fluent:delete-24-regular"
+                            color="goldenrod"
+                          />
+                        </Box>
+                      </Tooltip>
+                    )}
+                  </Box>
+
+                  <Button
+                    variant="contained"
+                    onClick={() => {
+                      setIdTreatment(treatment.id);
+                      setOpenModal(true);
+                    }}
+                    sx={{
+                      backgroundColor: "black",
+                      color: "goldenrod",
+                      //height: "4px",
+                      //justifyContent: "flex-around",
+
+                      //padding: "0px",
+                      //margin: "-50px",
+                      //width: "80px",
+                    }}
+                  >
+                    Booking
+                  </Button>
+                </Box>
               </Box>
             </Box>
           </Card>

@@ -7,15 +7,12 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { deleteTreatment, getAllTreatments } from "../../services/apiCalls";
 
-export default function AlertDialog({ open, setOpen, treatment }) {
+export default function AlertDialog({ open, setOpen, treatmentToDelete }) {
   const handleClose = () => {
     setOpen(false);
   };
 
-  console.log(treatment);
-
   const deleteTreatmentAction = async () => {
-    console.log(treatmentToDelete);
     try {
       const response = await deleteTreatment(treatmentToDelete); //await espera a que la funcion deleteTreatment que esta en axion de apicall se conecte al backend
       setOpen(false);

@@ -92,7 +92,11 @@ export default function ModalBasic({ openModal, setOpenModal, idTreatment }) {
             <Button variant="outlined" onClick={handleClose} color="error">
               Cancel
             </Button>
-            <Button type="submit" variant="contained" color="success">
+            <Button
+              type="submit"
+              variant="contained"
+              sx={{ bgcolor: "grey", "&:hover": { bgcolor: "black" } }}
+            >
               Save
             </Button>
           </Box>
