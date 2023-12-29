@@ -69,8 +69,7 @@ const CreateTreatments = () => {
             color: "goldenrod",
             "&:hover": {
               backgroundColor: "white",
-              color: "black",
-              color: "goldenrod",
+              color: "wihte",
             },
           }}
         />
@@ -85,7 +84,6 @@ const CreateTreatments = () => {
             "&:hover": {
               backgroundColor: "white",
               color: "black",
-              color: "goldenrod",
             },
           }}
         />
@@ -100,7 +98,6 @@ const CreateTreatments = () => {
             "&:hover": {
               backgroundColor: "white",
               color: "black",
-              color: "goldenrod",
             },
           }}
         />
@@ -115,7 +112,6 @@ const CreateTreatments = () => {
             "&:hover": {
               backgroundColor: "white",
               color: "black",
-              color: "goldenrod",
             },
           }}
         />
@@ -127,7 +123,7 @@ const CreateTreatments = () => {
             backgroundColor: "black",
             color: "goldenrod",
             "&:hover": {
-              backgroundColor: "black",
+              backgroundColor: "white",
               color: "black",
             },
           }}

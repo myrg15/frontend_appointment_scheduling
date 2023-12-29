@@ -91,9 +91,11 @@ export default function AlertDialogEdit({ open, setOpen, treatmentToEdit }) {
             />
 
             <DialogActions>
-              <Button onClick={handleClose}>Cancel</Button>
+              <Button onClick={handleClose}>
+                Cancel sx={{ backgroundColor: "black", color: "goldenrod" }}
+              </Button>
               <Button type="" autoFo cus>
-                Save
+                Save sx={{ backgroundColor: "black", color: "goldenrod" }}
               </Button>
             </DialogActions>
           </Box>
