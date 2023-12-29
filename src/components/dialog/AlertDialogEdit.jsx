@@ -89,13 +89,19 @@ export default function AlertDialogEdit({ open, setOpen, treatmentToEdit }) {
               variant="outlined"
               defaultValue={description}
             />
-
             <DialogActions>
-              <Button onClick={handleClose}>
-                Cancel sx={{ backgroundColor: "black", color: "goldenrod" }}
+              <Button
+                onClick={handleClose}
+                style={{ backgroundColor: "black", color: "goldenrod" }}
+              >
+                Cancel
               </Button>
-              <Button type="" autoFo cus>
-                Save sx={{ backgroundColor: "black", color: "goldenrod" }}
+              <Button
+                type="submit"
+                autoFocus
+                style={{ backgroundColor: "black", color: "goldenrod" }}
+              >
+                Save
               </Button>
             </DialogActions>
           </Box>
