@@ -67,11 +67,13 @@ const Home = () => {
       {treatments.map((treatment) => {
         return (
           <Card
+            key={treatment.id}
             sx={{
               width: "250px",
               height: "350px",
               display: "flex",
               flexDirection: "column",
+              position: "relative",
             }}
           >
             <Box
@@ -86,8 +88,8 @@ const Home = () => {
                   height="100%"
                   bgcolor="#00000073"
                   position="absolute"
-                >
-                  <Box
+                ></Box>
+                {/*<Box
                     position="absolute"
                     p="1"
                     right="0"
@@ -95,7 +97,7 @@ const Home = () => {
                     m="10px"
                     zIndex={10}
                   ></Box>
-                </Box>
+               </Box>*/}
                 <Box
                   component="img"
                   src={treatment.img_url}
@@ -104,6 +106,7 @@ const Home = () => {
                   sx={{ objectFit: "cover" }}
                 />
               </Box>
+
               <Box
                 display="flex"
                 flexDirection="column"
@@ -132,7 +135,15 @@ const Home = () => {
                 </Typography>
 
                 {ROLE === "admin" && (
-                  <Box p="4px" display="flex" flexDirection="column" gap="5px">
+                  <Box
+                    position="absolute"
+                    bottom="0"
+                    right="0"
+                    m="10px"
+                    display="flex"
+                    flexDirection="column"
+                    gap="5px"
+                  >
                     <Tooltip
                       sx={{ cursor: "pointer" }}
                       title="Delete"
@@ -148,13 +159,16 @@ const Home = () => {
                         justifyContent="center"
                         alignItems="center"
                       >
-                        <Icon icon="fluent:delete-24-regular" color="red" />
+                        <Icon
+                          icon="fluent:delete-24-regular"
+                          color="goldenrod"
+                        />
                       </Box>
                     </Tooltip>
                     <Tooltip
                       sx={{ cursor: "pointer" }}
                       title="Edit"
-                      placement="left"
+                      placement="right"
                       onClick={() => handleClickOpenEdit(treatment)}
                     >
                       <Box
@@ -181,11 +195,14 @@ const Home = () => {
                   sx={{
                     backgroundColor: "black",
                     color: "goldenrod",
-                    height: "4px",
-                    padding: "0px",
-                    right: "-200px",
-                    margin: "-50px",
-                    width: "50px",
+                    //height: "4px",
+                    //justifyContent: "flex-around",
+                    position: "absolute",
+                    //padding: "0px",
+                    bottom: "10px",
+                    right: "10px",
+                    //margin: "-50px",
+                    //width: "80px",
                   }}
                 >
                   Booking
