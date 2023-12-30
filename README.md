@@ -44,10 +44,12 @@ EDIT TREATMENT
 
 ### Technologies Used
 
-<img src="https://miro.medium.com/v2/resize:fit:1400/1*cpCZrcGIQ6HCGwdrdh5APw.png" width="300" style="margin-right: 10px" />
+<div> 
+<img src="https://miro.medium.com/v2/resize:fit:1400/1*cpCZrcGIQ6HCGwdrdh5APw.png" width="300" style="margin-right: 10px">
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0sdmFxHeB1PGvBW8YMv4vpcsBiP3DX5a5Qw&usqp=CAU" width="100" style="margin-right: 10px" />
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2B_t9EpKeMTW2myKHQoa7C1_qZl6u7TxznANV9GPMc57G_4UXWh_3cC5dpRsERm9uM8o&usqp=CAU" width="150" style="margin-right: 10px" />
-<img src="https://ambartlab.com.ar/wp-content/uploads/guia-completa-para-crear-consultas-en-mysql-paso-a-paso.png" width="150" />
+<img src="https://ambartlab.com.ar/wp-content/uploads/guia-completa-para-crear-consultas-en-mysql-paso-a-paso.png" width="150"/>
+</div>
 
 ### Licence and copyright
 

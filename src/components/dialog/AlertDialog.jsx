@@ -36,8 +36,14 @@ export default function AlertDialog({ open, setOpen, treatmentToDelete }) {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Exit</Button>
-          <Button onClick={deleteTreatmentAction} autoFo cus>
+          <Button onClick={handleClose} style={{ color: "black" }}>
+            Exit
+          </Button>
+          <Button
+            onClick={deleteTreatmentAction}
+            autoFocus
+            style={{ color: "black" }}
+          >
             Agree
           </Button>
         </DialogActions>
