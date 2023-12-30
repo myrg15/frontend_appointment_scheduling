@@ -50,7 +50,11 @@ function NavBar(props) {
   const drawer = (
     <Box
       onClick={handleDrawerToggle}
-      sx={{ textAlign: "center", backgroundColor: "black", color: "goldenrod" }}
+      sx={{
+        textAlign: "center",
+        backgroundColor: "black",
+        color: "goldenrod",
+      }}
     >
       <Typography variant="h6" sx={{ my: 2, color: "goldenrod" }}>
         Facial & Body Care
