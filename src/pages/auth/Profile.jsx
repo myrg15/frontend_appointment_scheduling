@@ -36,6 +36,7 @@ export const Profile = () => {
         gap="15px"
         width="300px"
         color={"black"}
+        backgroundColor={"goldenrod"}
       >
         <Typography variant="h5">Profile</Typography>
         <TextField
