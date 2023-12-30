@@ -44,6 +44,8 @@ EDIT TREATMENT
 
 ### Technologies Used
 
+![](https://miro.medium.com/v2/resize:fit:1400/1*cpCZrcGIQ6HCGwdrdh5APw.png) ![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0sdmFxHeB1PGvBW8YMv4vpcsBiP3DX5a5Qw&usqp=CAU) ![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2B_t9EpKeMTW2myKHQoa7C1_qZl6u7TxznANV9GPMc57G_4UXWh_3cC5dpRsERm9uM8o&usqp=CAU) ![](https://ambartlab.com.ar/wp-content/uploads/guia-completa-para-crear-consultas-en-mysql-paso-a-paso.png)
+
 ![Vite](./src/Imag/react_Vite_Type.png)
 ![Material_UI](./src/Imag/Material_UI.png)
 ![Workbench](./src/Imag/img_mysql_workbench.png)
