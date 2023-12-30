@@ -1,6 +1,6 @@
-import { Alert, Box, Button, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { createTreatment } from "../services/apiCalls";
+import { Alert, Box, Button, TextField } from "@mui/material";
 
 const CreateTreatments = () => {
   const [isCreateSuccess, setIsCreateSuccess] = useState(false);
@@ -18,12 +18,10 @@ const CreateTreatments = () => {
     });
 
     const data = {
-      //review_Id: e.target.review_Id.value,
       name_treatment: e.target.name_treatment.value,
       description: e.target.description.value,
       duration_treatment: e.target.duration_treatment.value,
       img_url: e.target.img_url.value,
-      //status: e.target.status.value,
     };
 
     try {
@@ -112,6 +110,7 @@ const CreateTreatments = () => {
             "&:hover": {
               backgroundColor: "white",
               color: "black",
+              color: "goldenrod",
             },
           }}
         />
@@ -123,7 +122,7 @@ const CreateTreatments = () => {
             backgroundColor: "black",
             color: "goldenrod",
             "&:hover": {
-              backgroundColor: "white",
+              backgroundColor: "black",
               color: "black",
             },
           }}

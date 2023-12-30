@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import { getProfile } from "../../services/apiCalls";
 import { Box, Typography, TextField, Stack, Button } from "@mui/material";
 
@@ -36,7 +36,6 @@ export const Profile = () => {
         gap="15px"
         width="300px"
         color={"black"}
-        backgroundColor={"goldenrod"}
       >
         <Typography variant="h5">Profile</Typography>
         <TextField
