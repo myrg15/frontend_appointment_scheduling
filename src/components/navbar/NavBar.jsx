@@ -102,7 +102,10 @@ function NavBar(props) {
                 key={item.name}
                 sx={{ color: "goldenrod" }}
               >
-                <Button key={item.name} sx={{ color: "goldenrod" }}>
+                <Button
+                  key={item.name}
+                  sx={{ color: "goldenrod", backgroundColor: item.name }}
+                >
                   {item.name}
                 </Button>
               </NavLink>

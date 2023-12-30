@@ -90,15 +90,6 @@ const Home = () => {
                   bgcolor="#00000073"
                   position="absolute"
                 ></Box>
-                {/*<Box
-                    position="absolute"
-                    p="1"
-                    right="0"
-                    bottom="0"
-                    m="10px"
-                    zIndex={10}
-                  ></Box>
-               </Box>*/}
                 <Box
                   component="img"
                   src={treatment.img_url}
