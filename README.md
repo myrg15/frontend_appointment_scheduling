@@ -1,6 +1,6 @@
 <h1 align="center">Appointments booking System</h1>​
 ​
-<h2 align="center">Frontend application for centre esthetics</h2>
+<h2 align="center">Frontend for centre esthetics facial & body care</h2>
 
 ## Table of contents
 
@@ -16,14 +16,14 @@ I have developed a frontend web application to simulate the management of appoin
 
 ### Views
 
-HOME
-![Home](./src/Imag/Home.JPG)
-
 LOGIN
 ![Login](./src/Imag/Login.JPG)
 
 REGISTER
 ![Register](./src/Imag/Register.JPG)
+
+HOME
+![Home](./src/Imag/Home.JPG)
 
 PROFILE
 ![Profile](./src/Imag/Profile.JPG)
