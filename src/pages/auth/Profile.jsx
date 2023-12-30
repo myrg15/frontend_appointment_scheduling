@@ -73,6 +73,7 @@ export const Profile = () => {
           label="Address"
           variant="outlined"
           name="address"
+          sx={{ "& label": { color: "black" } }}
         />
         <Stack direction="row" spacing="15px" justifyContent="flex-end">
           <Button
