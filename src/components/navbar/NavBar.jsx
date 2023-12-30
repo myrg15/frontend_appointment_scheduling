@@ -23,6 +23,7 @@ let navItems = [
   { name: "Appointments", path: "/appointments" },
   { name: "Login", path: "/login", protected: false },
   { name: "Register", path: "/register", protected: false },
+  { name: "Profile", path: "/profile" },
 ];
 
 function NavBar(props) {
@@ -108,7 +109,11 @@ function NavBar(props) {
               >
                 <Button
                   key={item.name}
-                  sx={{ color: "goldenrod", backgroundColor: item.name }}
+                  sx={{
+                    color: "goldenrod",
+                    backgroundColor:
+                      item.name === "Profile" ? "black" : "transparent",
+                  }}
                 >
                   {item.name}
                 </Button>

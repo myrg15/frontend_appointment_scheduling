@@ -52,11 +52,7 @@ const Register = () => {
         gap="15px"
       >
         {message && <Alert severity="success">{message}</Alert>}
-        {/*<Avatar
-          alt="User Avatar"
-          src="C:\Users\Usuario\Desktop\diseños_rutas_cliente_empleado_admin\Beautiful_Skin.jpg"
-          sx={{ width: 80, height: 80, alignSelf: "flex-end" }}
-        />*/}
+
         <Typography variant="h5">Register</Typography>
         <Stack direction="row" spacing="15px">
           <TextField

@@ -35,6 +35,7 @@ export const Profile = () => {
         flexDirection="column"
         gap="15px"
         width="300px"
+        color={"black"}
       >
         <Typography variant="h5">Profile</Typography>
         <TextField
