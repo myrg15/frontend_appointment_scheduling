@@ -32,7 +32,7 @@ const CreateTreatments = () => {
       setIsLoading(false);
       setTimeout(() => {
         setIsCreateSuccess(false);
-      }, 8000);
+      }, 3000);
     } catch (error) {
       setIsLoading(false);
     }
