@@ -79,10 +79,16 @@ export const Profile = () => {
             onClick={() => navigate("/")}
             fullWidth
             variant="outlined"
+            style={{ backgroundColor: "black", color: "goldenrod" }}
           >
             Cancel
           </Button>
-          <Button fullWidth type="submit" variant="contained">
+          <Button
+            fullWidth
+            type="submit"
+            variant="contained"
+            style={{ backgroundColor: "black", color: "goldenrod" }}
+          >
             Save
           </Button>
         </Stack>
