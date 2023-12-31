@@ -53,4 +53,4 @@ EDIT TREATMENT
 
 ### Licence and copyright
 
-📝 The copyright belongs to me Meriyen Rodríguez, in this web application proposed by the Geekshubs academy as the first frontend version.
+📝 Copyright: Meriyen Rodríguez, to the development of the appointment booking management web application to complete the free-choice final project at the Geekshubs academy.
