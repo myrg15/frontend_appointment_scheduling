@@ -48,17 +48,20 @@ const Login = () => {
         <Typography variant="h5">Login</Typography>
 
         <TextField
-          id="outlined-basic"
+          id="email"
           label="Email"
+          type="email"
           variant="outlined"
           name="email"
+          helperText="Enter a valid email"
         />
         <TextField
-          id="outlined-basic"
+          id="password"
           label="Password"
+          type="password"
           variant="outlined"
           name="password"
-          type="password"
+          helperText="Enter a valid password"
         />
 
         <Stack direction="row" spacing="15px" justifyContent="flex-end">
@@ -67,11 +70,17 @@ const Login = () => {
             onClick={() => navigate("/register")}
             fullWidth
             variant="outlined"
+            style={{ color: "black" }}
           >
             Register
           </Button>
           {!message && (
-            <Button fullWidth type="submit" variant="contained">
+            <Button
+              fullWidth
+              type="submit"
+              variant="contained"
+              style={{ background: "black" }}
+            >
               Login
             </Button>
           )}
