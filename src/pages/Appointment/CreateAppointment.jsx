@@ -101,7 +101,7 @@ export const CreateAppointment = ({
         <Button
           onClick={handleCreateAppointment}
           variant="contained"
-          color="primary"
+          color="black"
         >
           Create Appointment
         </Button>
