@@ -63,7 +63,7 @@ export default function ModalBasic({ openModal, setOpenModal, idTreatment }) {
         {isCreated && (
           <Alert severity="success">Appointment created successfully</Alert>
         )}
-        <Typography variant="h6">Appointment</Typography>
+        <Typography variant="h6">Booking</Typography>
         <Box
           component="form"
           display="flex"
