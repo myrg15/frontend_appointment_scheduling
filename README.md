@@ -31,7 +31,7 @@ PROFILE
 
 ![Profile](./src/Imag/Profile.JPG)
 
-### CRUD treatmen admin
+### Treatmen (admin)
 
 CREATE TREATMENT
 ![Create Treatment](./src/Imag/create_Treatment.JPG)
@@ -41,6 +41,14 @@ DELETE TREATMENT
 
 EDIT TREATMENT
 ![Edit](./src/Imag/edit_Treatment.JPG)
+
+### Booking (user)
+
+CREATE BOOKING
+![Create Booking](./src/Imag/Booking_User.JPG)
+
+GET ALL BOOKING
+![All Booking](./src/Imag/All_Appointment_User.JPG)
 
 ### Technologies Used
 
