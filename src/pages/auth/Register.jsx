@@ -103,11 +103,17 @@ const Register = () => {
             onClick={() => navigate("/login")}
             fullWidth
             variant="outlined"
+            style={{ color: "black" }}
           >
             Login
           </Button>
           {!message && (
-            <Button fullWidth type="submit" variant="contained">
+            <Button
+              fullWidth
+              type="submit"
+              variant="contained"
+              style={{ background: "black" }}
+            >
               Register
             </Button>
           )}
